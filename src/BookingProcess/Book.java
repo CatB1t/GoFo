@@ -6,11 +6,14 @@ import com.company.client.*;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Book { //TODO complete
-    private enum BookStatus{Accepted,Denied,Cancelled,Pending}
-    private ArrayList<Integer> slotIndex = new ArrayList<Integer>();
+public class Book extends BookingManager { //TODO complete
+    public enum BookStatus{accepted,denied,cancelled,pending}
+    private ArrayList<Book> bookings = new ArrayList<Book>();
     private Playground playground;
     private Player bookedByPlayer;
-    private BookStatus status;
     private Date bookDate;
+
+    public BookStatus status;
+
+
 }

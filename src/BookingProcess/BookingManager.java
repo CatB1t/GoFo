@@ -1,23 +1,27 @@
 package BookingProcess;
 
-import com.company.Playground;
+import com.company.*;
 import com.company.client.*;
 
 import java.util.ArrayList;
 
 public class BookingManager { //TODO complete
-    private void updateBookingStatus(Player player, Playground playground, ArrayList<Integer> booking){}; //TODO check parameters
-    private boolean confirmPayment(int amount){ //TODO check return
+    private ArrayList<Book> bookings = new ArrayList<>();
+
+    public boolean bookSlots(Player player,Playground playground,ArrayList<Book> bookings){ //TODO check return
 
         return true;
-    };
-    public boolean bookSlots(Player player,Playground playground,ArrayList<Integer> booking){ //TODO check return
+    }
+    private void updateBookingStatus(Player player, Playground playground, ArrayList<Book> bookings){//TODO check parameters
 
-        return true;
-    };
+    }
+
     public boolean cancelBooking(Book booking){ //TODO check return
 
         return true;
-    };
+    }
+
+
 
 }
+
