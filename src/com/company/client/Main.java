@@ -1,4 +1,4 @@
-package client;
+package com.company.client;
 
 public class Main {
 

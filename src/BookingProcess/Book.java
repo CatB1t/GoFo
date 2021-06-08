@@ -1,4 +1,7 @@
-package com.company;
+package BookingProcess;
+
+import com.company.Playground;
+import com.company.client.*;
 
 import java.util.ArrayList;
 import java.util.Date;
