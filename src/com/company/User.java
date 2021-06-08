@@ -17,7 +17,7 @@ public class User {
     ArrayList<Object> profile = new ArrayList<Object>();
 
 
-    public void Register(UserType user){
+    public void Register(){
       System.out.println("Choose user type:\n1.player \n2.playground owner \n3.Adminstrator\n");
         Scanner in = new Scanner(System.in);
         int choice = in.nextInt();
