@@ -1,8 +1,11 @@
 package com.company;
 
-public class Main {
+import com.company.MenuSystem.MainMenu;
+import com.company.MenuSystem.MenuManager;
+
+public class main {
 
     public static void main(String[] args) {
-	// write your code here
+        MenuManager.Execute(new MainMenu());
     }
 }

@@ -26,7 +26,7 @@ public class RegisterMenu implements Menu
             case 2: // Playground
                 createdUser = createUser(User.UserType.Player);
                 return false;
-            case 3: // Exit
+            case 3: // Return
                 return true;
         }
         return false;
