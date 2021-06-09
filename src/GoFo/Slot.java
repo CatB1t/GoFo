@@ -1,3 +1,5 @@
+package GoFo;
+
 public class Slot
 {
     public String startTime;

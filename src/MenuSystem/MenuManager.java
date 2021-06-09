@@ -1,4 +1,4 @@
-package com.company.MenuSystem;
+package MenuSystem;
 
 import java.util.Scanner;
 
@@ -8,10 +8,15 @@ public class MenuManager
 
     public MenuManager()
     {
+
         keyboard = new Scanner(System.in);
     }
 
-    static public int getIntInput() {return keyboard.nextInt(); }
+    static public int getIntInput()
+    {
+        return keyboard.nextInt();
+    }
+
 
     static public void Execute(Menu menu)
     {

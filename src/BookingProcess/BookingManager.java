@@ -1,7 +1,7 @@
 package BookingProcess;
 
+import GoFo.*;
 import UserManager.Player;
-
 import java.util.ArrayList;
 
 public class BookingManager

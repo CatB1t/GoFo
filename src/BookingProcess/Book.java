@@ -1,8 +1,8 @@
 package BookingProcess;
 
-import Playground;
-import Slot;
-import com.company.UserManager.Player;
+import GoFo.Playground;
+import GoFo.Slot;
+import UserManager.Player;
 
 public class Book
 {

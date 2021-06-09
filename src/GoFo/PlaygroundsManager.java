@@ -1,3 +1,5 @@
+package GoFo;
+
 import java.util.ArrayList;
 
 public class PlaygroundsManager

@@ -1,4 +1,4 @@
-package com.company.MenuSystem;
+package MenuSystem;
 
 public class MainMenu implements Menu
 {

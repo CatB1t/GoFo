@@ -1,4 +1,4 @@
-package com.company.UserManager;
+package UserManager;
 
 import java.util.ArrayList;
 

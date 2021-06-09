@@ -1,6 +1,6 @@
-package com.company.MenuSystem;
+package MenuSystem;
 
-import com.company.UserManager.User;
+import UserManager.User;
 
 public class RegisterMenu implements Menu
 {
@@ -10,8 +10,8 @@ public class RegisterMenu implements Menu
     {
         String toPrint = "========= Register =========\n " +
                 "Choose the role: " +
-                "1. Playground Owner\n" +
-                "2. Playground\n" +
+                "1. GoFo.Playground Owner\n" +
+                "2. GoFo.Playground\n" +
                 "3. Return\n";
         System.out.println(toPrint);
     }
@@ -20,10 +20,10 @@ public class RegisterMenu implements Menu
     {
         switch(MenuManager.getIntInput())
         {
-            case 1: // Playground Owner
+            case 1: // GoFo.Playground Owner
                 createdUser = createUser(User.UserType.PlaygroundOwner);
                 return false;
-            case 2: // Playground
+            case 2: // GoFo.Playground
                 createdUser = createUser(User.UserType.Player);
                 return false;
             case 3: // Return
