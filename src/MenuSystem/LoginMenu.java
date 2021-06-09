@@ -11,9 +11,9 @@ public class LoginMenu implements Menu
         System.out.println(toPrint);
     }
 
-    public boolean Handle (int userInput)
+    public boolean Handle ()
     {
-        switch(userInput)
+        switch(MenuManager.getIntInput())
         {
             case 1: // Register
                 // register menu

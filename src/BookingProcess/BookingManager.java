@@ -1,7 +1,6 @@
 package BookingProcess;
 
-import com.company.*;
-import com.company.UserManager.Player;
+import UserManager.Player;
 
 import java.util.ArrayList;
 

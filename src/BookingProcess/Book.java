@@ -1,7 +1,7 @@
 package BookingProcess;
 
-import com.company.Playground;
-import com.company.Slot;
+import Playground;
+import Slot;
 import com.company.UserManager.Player;
 
 public class Book
