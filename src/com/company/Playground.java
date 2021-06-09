@@ -1,38 +1,43 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Date;
 
-public class Playground {
+public class Playground
+{
     private String name;
     private int size;
     private String location;
     private long pricePerHour;
-    public ArrayList<Slot> schedule = new ArrayList<Slot>(); //changed to public by dova
+    private ArrayList<Slot> availableSchedule = new ArrayList<Slot>();
+    private ArrayList<Slot> bookedSchedule = new ArrayList<Slot>();
 
-    private int cancellationPeriod;
-    private boolean isActive;
-    //private PlaygroundOwner owner;
-    //ArrayList<Book> pendingRequests;
-    public Playground(){
-        this.name = "barca";
-        this.size = 10;
-        this.location = "faisal";
-        this.pricePerHour = (long) 100.0;
+    public ArrayList<Slot> getAvailableSchedule() { return availableSchedule; }
 
+    public Playground()
+    {
+        this.name = "";
+        this.size = 0;
+        this.location = "";
+        this.pricePerHour = 0;
     }
-    public void addSlot(String start, String end,String date){ //TODO add Date parameter
-        Slot slot = new Slot();
-        slot.startTime = start;
-        slot.endTime = end;
-        slot.dateString = date;
-//        slot.date = new Date(date);
-        schedule.add(slot);
+
+    public Playground(String name, String location, int size, long pricePerHour)
+    {
+        this.name = name;
+        this.location = location;
+        this.size = size;
+        this.pricePerHour = pricePerHour;
     }
-    public void getSlots(){
-        for (int i = 0; i < schedule.size(); i++) {
-            System.out.println(schedule.get(i));
-        }
+
+    public void createSlot(String start, String end, String day)
+    {
+        Slot slot = new Slot(start, end, day);
+        availableSchedule.add(slot);
+    }
+
+    public void bookSlot(int index)
+    {
+        bookedSchedule.add(availableSchedule.get(index));
     }
 
 }

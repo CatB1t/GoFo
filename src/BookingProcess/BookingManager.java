@@ -2,31 +2,26 @@ package BookingProcess;
 
 import com.company.*;
 import com.company.client.*;
-
 import java.util.ArrayList;
 
-public class BookingManager extends Book { //TODO complete
-    private ArrayList<Book> Bookings = new ArrayList<>();
+public class BookingManager
+{
 
-    public boolean bookSlot(Player player,Playground playground,Slot slot,String bookDate){ //TODO check return
-        Book book = new Book();
-        book.bookedByPlayer = player;
-        book.playground = playground;
-        book.bookedSlot = slot;
-        book.bookDate = bookDate;
-        Bookings.add(book);
-        return true;
-    }
-//    private void updateBookingStatus(Player player, Playground playground, ArrayList<Book> bookings){//TODO check parameters
-//
-//    }
+    private ArrayList<Book> bookings = new ArrayList<Book>();
+    public ArrayList<Book> getBookings () { return  bookings; }
 
-    public boolean cancelBooking(int index){ //TODO check return
-        Bookings.remove(index);
+    public boolean bookSlot(Player player, Playground playground, Slot slot, String bookDate)
+    {
+        Book book = new Book(player, playground, slot, bookDate);
+        bookings.add(book);
         return true;
     }
 
-
+    public boolean cancelBooking(int index)
+    {
+        bookings.remove(index);
+        return true;
+    }
 
 }
 

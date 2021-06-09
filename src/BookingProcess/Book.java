@@ -4,19 +4,19 @@ import com.company.Playground;
 import com.company.Slot;
 import com.company.client.*;
 
-import java.util.ArrayList;
-import java.util.Date;
-
-public class Book { //TODO complete
-    public enum BookStatus{accepted,denied,cancelled,pending}
-
+public class Book
+{
     public Playground playground;
     public Player bookedByPlayer;
     public Slot bookedSlot;
     public String bookDate;
 
-    public BookStatus status;
-
-
+    Book (Player bookedByPlayer, Playground playground, Slot slot, String date)
+    {
+        this.playground = playground;
+        this.bookedByPlayer = bookedByPlayer;
+        this.bookedSlot = slot;
+        this.bookDate = date;
+    }
 
 }
