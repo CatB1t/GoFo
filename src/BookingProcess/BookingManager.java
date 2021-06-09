@@ -1,12 +1,12 @@
 package BookingProcess;
 
 import com.company.*;
-import com.company.client.*;
+import com.company.UserManager.Player;
+
 import java.util.ArrayList;
 
 public class BookingManager
 {
-
     private ArrayList<Book> bookings = new ArrayList<Book>();
     public ArrayList<Book> getBookings () { return  bookings; }
 

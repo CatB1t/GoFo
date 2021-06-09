@@ -2,7 +2,7 @@ package BookingProcess;
 
 import com.company.Playground;
 import com.company.Slot;
-import com.company.client.*;
+import com.company.UserManager.Player;
 
 public class Book
 {
