@@ -4,11 +4,18 @@ import UserManager.*;
 
 public class LoginMenu implements Menu
 {
+    /**
+     *shows login menu.
+     */
     public void Show ()
     {
         System.out.println("========= Login ========= ");
     }
 
+    /**
+     *Handles the process of logging in by asking the user for name and password then it checking their validity.
+     * @return boolean that equals true when user's login info are not valid, and false when they are valid.
+     */
     public boolean Handle ()
     {
         String name,password;
