@@ -1,6 +1,6 @@
 package MenuSystem;
 
-import UserManager.User;
+import UserManager.UserType;
 import UserManager.UserManager;
 
 public class RegisterMenu implements Menu
@@ -10,7 +10,7 @@ public class RegisterMenu implements Menu
         String toPrint = "========= Register =========\n " +
                 "Choose the role:\n" +
                 "1. Playground Owner\n" +
-                "2. Playground\n" +
+                "2. Player\n" +
                 "3. Return\n";
         System.out.println(toPrint);
     }
@@ -20,12 +20,12 @@ public class RegisterMenu implements Menu
         switch(MenuManager.getIntInput())
         {
             case 1: // Playground Owner
-                createUser(User.UserType.PlaygroundOwner);
+                createUser(UserType.PlaygroundOwner);
                 MenuManager.ignoreMenuInStack(this);
                 MenuManager.addMenuToStack(new LoginMenu());
                 return false;
             case 2: // Playground
-                createUser(User.UserType.Player);
+                createUser(UserType.Player);
                 MenuManager.ignoreMenuInStack(this);
                 MenuManager.addMenuToStack(new LoginMenu());
                 return false;
@@ -35,24 +35,25 @@ public class RegisterMenu implements Menu
         return false;
     }
 
-    private boolean createUser (User.UserType type)
+    private boolean createUser (UserType type)
     {
-        MenuManager.clearBuffer();
+
         String name, password, email, location, phone;
 
         System.out.print("Enter your username: ");
-        name = MenuManager.keyboard.nextLine();
+        name = MenuManager.keyboard.next();
 
         System.out.print("Enter your password: ");
-        password = MenuManager.keyboard.nextLine();
+        password = MenuManager.keyboard.next();
 
         System.out.print("Enter your email: ");
-        email = MenuManager.keyboard.nextLine();
+        email = MenuManager.keyboard.next();
 
         System.out.print("Enter your phone: ");
-        phone = MenuManager.keyboard.nextLine();
+        phone = MenuManager.keyboard.next();
 
         System.out.print("Enter your location: ");
+        MenuManager.clearBuffer();
         location = MenuManager.keyboard.nextLine();
 
         UserManager.createUser(name, password, email, phone, location, type);

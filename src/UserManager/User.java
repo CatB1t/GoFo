@@ -2,12 +2,6 @@ package UserManager;
 
 public class User
 {
-    public enum UserType
-    {
-        Player,
-        PlaygroundOwner,
-        Administrator
-    }
 
     private String name ;
     private static int ID = 0;
@@ -30,12 +24,16 @@ public class User
 
     public boolean verify (String name, String password)
     {
-        return (this.name.compareTo(name) + this.password.compareTo(password)) == 0;
+        return this.name.equalsIgnoreCase(name) && this.password.equals(password);
     }
 
-    public UserType getType ()
+    public UserType getType()
     {
         return type;
     }
 
+    public String getName()
+    {
+        return name;
+    }
 }

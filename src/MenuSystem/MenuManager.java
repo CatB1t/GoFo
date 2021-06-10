@@ -11,7 +11,6 @@ public class MenuManager
 
     public MenuManager()
     {
-
         keyboard = new Scanner(System.in);
     }
 
@@ -48,6 +47,4 @@ public class MenuManager
             }
         }
     }
-
-
 }

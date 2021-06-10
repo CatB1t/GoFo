@@ -1,7 +1,6 @@
 package MenuSystem;
 
-import UserManager.UserManager;
-import com.sun.tools.javac.Main;
+import UserManager.*;
 
 public class LoginMenu implements Menu
 {
@@ -15,21 +14,29 @@ public class LoginMenu implements Menu
         String name,password;
 
         System.out.print("Enter username: ");
-        name = MenuManager.keyboard.nextLine();
+        name = MenuManager.keyboard.next();
         System.out.print("Enter password (case sensitive): ");
-        password = MenuManager.keyboard.nextLine();
+        password = MenuManager.keyboard.next();
 
-        boolean isValidLogin = UserManager.login(name.toLowerCase(), password);
+        LoginStatus loginStatus = UserManager.login(name, password);
 
-        if(!isValidLogin) // Go back
+        if(!loginStatus.isSuccessful) // Go back
         {
             System.out.println("Invalid login credentials");
             return true;
         }
 
-        // TODO Depending on role show menu
+        MenuManager.ignoreMenuInStack(this);
 
-        MenuManager.addMenuToStack(new PlayerMenu());
+        if(UserManager.getUser(loginStatus.userIndex).getType() == UserType.Player)
+        {
+            MenuManager.addMenuToStack(new PlayerMenu(loginStatus.userIndex));
+        }
+        else if (UserManager.getUser(loginStatus.userIndex).getType() == UserType.PlaygroundOwner)
+        {
+            MenuManager.addMenuToStack(new PlaygroundOwnerMenu(loginStatus.userIndex));
+        }
+
         return false;
     }
 }
