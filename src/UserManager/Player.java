@@ -28,9 +28,8 @@ public class Player extends User
      * @param email the player's email.
      * @param phone the player's phone number.
      * @param location the player's location.
-     * @param type type of the user which is user.
      */
-    public Player (String name, String password, String email, String phone, String location, UserType type)
+    public Player (String name, String password, String email, String phone, String location)
     {
         super(name, password, email, phone, location, UserType.Player);
     }
