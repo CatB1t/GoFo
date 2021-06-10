@@ -1,27 +1,35 @@
 package MenuSystem;
 
+import UserManager.UserManager;
+import com.sun.tools.javac.Main;
+
 public class LoginMenu implements Menu
 {
     public void Show ()
     {
-        String toPrint = "========= Login =========\n ";
-        System.out.println(toPrint);
+        System.out.println("========= Login ========= ");
     }
 
     public boolean Handle ()
     {
-        // TODO ask for input
-        switch(MenuManager.getIntInput())
+        String name,password;
+
+        System.out.print("Enter username: ");
+        name = MenuManager.keyboard.nextLine();
+        System.out.print("Enter password (case sensitive): ");
+        password = MenuManager.keyboard.nextLine();
+
+        boolean isValidLogin = UserManager.login(name.toLowerCase(), password);
+
+        if(!isValidLogin) // Go back
         {
-            case 1: // Register
-                // register menu
-                return false;
-            case 2: // Login
-                // login menu
-                return false;
-            case 3: // Exit
-                return true;
+            System.out.println("Invalid login credentials");
+            return true;
         }
-        return true;
+
+        // TODO Depending on role show menu
+
+        MenuManager.addMenuToStack(new PlayerMenu());
+        return false;
     }
 }

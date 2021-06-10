@@ -30,7 +30,7 @@ public class User
 
     public boolean verify (String name, String password)
     {
-        return (this.name == name && this.password == password);
+        return (this.name.compareTo(name) + this.password.compareTo(password)) == 0;
     }
 
     public UserType getType ()
