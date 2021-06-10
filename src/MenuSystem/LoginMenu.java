@@ -4,15 +4,13 @@ public class LoginMenu implements Menu
 {
     public void Show ()
     {
-        String toPrint = "========= Login =========\n " +
-                "1. Register\n" +
-                "2. Login\n" +
-                "3. Exit\n";
+        String toPrint = "========= Login =========\n ";
         System.out.println(toPrint);
     }
 
     public boolean Handle ()
     {
+        // TODO ask for input
         switch(MenuManager.getIntInput())
         {
             case 1: // Register

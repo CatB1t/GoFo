@@ -1,17 +1,16 @@
 package MenuSystem;
 
 import UserManager.User;
+import UserManager.UserManager;
 
 public class RegisterMenu implements Menu
 {
-    private User createdUser;
-
     public void Show ()
     {
         String toPrint = "========= Register =========\n " +
-                "Choose the role: " +
-                "1. GoFo.Playground Owner\n" +
-                "2. GoFo.Playground\n" +
+                "Choose the role:\n" +
+                "1. Playground Owner\n" +
+                "2. Playground\n" +
                 "3. Return\n";
         System.out.println(toPrint);
     }
@@ -20,11 +19,15 @@ public class RegisterMenu implements Menu
     {
         switch(MenuManager.getIntInput())
         {
-            case 1: // GoFo.Playground Owner
-                createdUser = createUser(User.UserType.PlaygroundOwner);
+            case 1: // Playground Owner
+                createUser(User.UserType.PlaygroundOwner);
+                MenuManager.ignoreMenuInStack(this);
+                MenuManager.addMenuToStack(new LoginMenu());
                 return false;
-            case 2: // GoFo.Playground
-                createdUser = createUser(User.UserType.Player);
+            case 2: // Playground
+                createUser(User.UserType.Player);
+                MenuManager.ignoreMenuInStack(this);
+                MenuManager.addMenuToStack(new LoginMenu());
                 return false;
             case 3: // Return
                 return true;
@@ -32,25 +35,27 @@ public class RegisterMenu implements Menu
         return false;
     }
 
-    private User createUser (User.UserType type)
+    private boolean createUser (User.UserType type)
     {
+        MenuManager.clearBuffer();
         String name, password, email, location, phone;
 
-        System.out.println("Enter your username: ");
+        System.out.print("Enter your username: ");
         name = MenuManager.keyboard.nextLine();
 
-        System.out.println("Enter your password: ");
+        System.out.print("Enter your password: ");
         password = MenuManager.keyboard.nextLine();
 
-        System.out.println("Enter your email: ");
+        System.out.print("Enter your email: ");
         email = MenuManager.keyboard.nextLine();
 
-        System.out.println("Enter your phone: ");
+        System.out.print("Enter your phone: ");
         phone = MenuManager.keyboard.nextLine();
 
-        System.out.println("Enter your location: ");
+        System.out.print("Enter your location: ");
         location = MenuManager.keyboard.nextLine();
 
-        return new User(name, password, email, phone, location, type);
+        UserManager.createUser(name, password, email, phone, location, type);
+        return true;
     }
 }

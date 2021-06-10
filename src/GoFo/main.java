@@ -7,6 +7,7 @@ public class main {
     public static void main(String[] args)
     {
         MenuManager Manager = new MenuManager();
-        Manager.Execute(new MainMenu());
+        MenuManager.addMenuToStack(new MainMenu());
+        Manager.run();
     }
 }

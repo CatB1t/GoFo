@@ -4,7 +4,7 @@ public class MainMenu implements Menu
 {
     public void Show ()
     {
-        String toPrint = "========= GoFo =========\n " +
+        String toPrint = "========= GoFo =========\n" +
                 "1. Register\n" +
                 "2. Login\n" +
                 "3. Exit\n";
@@ -16,10 +16,10 @@ public class MainMenu implements Menu
         switch(MenuManager.getIntInput())
         {
             case 1: // Register
-                MenuManager.Execute(new RegisterMenu());
+                MenuManager.addMenuToStack(new RegisterMenu());
                 return false;
             case 2: // Login
-                MenuManager.Execute(new LoginMenu());
+                MenuManager.addMenuToStack(new LoginMenu());
                 return false;
             case 3: // Exit
                 return true;

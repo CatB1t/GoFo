@@ -1,10 +1,13 @@
 package MenuSystem;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class MenuManager
 {
+
     static Scanner keyboard;
+    static Stack<Menu> menusToExecute = new Stack<Menu>();
 
     public MenuManager()
     {
@@ -14,18 +17,37 @@ public class MenuManager
 
     static public int getIntInput()
     {
+        // TODO input validation
         return keyboard.nextInt();
     }
 
-
-    static public void Execute(Menu menu)
+    static public void clearBuffer ()
     {
-        while(true)
+        keyboard.nextLine(); // Clear the buffer.
+    }
+
+    static public void addMenuToStack(Menu menu)
+    {
+        menusToExecute.push(menu);
+    }
+
+    static public void ignoreMenuInStack(Menu menu)
+    {
+        menusToExecute.remove(menu);
+    }
+
+    static public void run ()
+    {
+        while(!menusToExecute.isEmpty())
         {
-            menu.Show();
-            if(menu.Handle())
-                break;
+            Menu menuToRun = menusToExecute.peek();
+            menuToRun.Show();
+            if(menuToRun.Handle())
+            {
+                menusToExecute.pop();
+            }
         }
     }
+
 
 }

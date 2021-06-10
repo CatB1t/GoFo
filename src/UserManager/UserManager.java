@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class UserManager {
 
-    private ArrayList<User> registeredUsers = new ArrayList<User>();
+    static private ArrayList<User> registeredUsers = new ArrayList<User>();
 
-    public boolean createUser(String name,  String password, String email, String number, String location, User.UserType type)
+    static public boolean createUser(String name,  String password, String email, String number, String location, User.UserType type)
     {
         // TODO Check for valid user
         User tmp = new User(name, password, email, number, location, type);
@@ -14,7 +14,7 @@ public class UserManager {
         return true;
     }
 
-    public boolean login (String name, String password)
+    static public boolean login (String name, String password)
     {
         for(int i = 0; i < registeredUsers.size(); i++)
         {
