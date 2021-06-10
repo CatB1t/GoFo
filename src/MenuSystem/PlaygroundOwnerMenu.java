@@ -3,14 +3,23 @@ package MenuSystem;
 import UserManager.User;
 import UserManager.UserManager;
 
+
 public class PlaygroundOwnerMenu implements Menu
 {
     private User currentUser;
 
+    /**
+     *
+     * @param playerIndex
+     */
     public PlaygroundOwnerMenu(int playerIndex)
     {
         currentUser = UserManager.getUser(playerIndex);
     }
+
+    /**
+     *Displays menu for playground owners so they can choose to: add a new playground,show booking requests or exit the app.
+     */
 
     public void Show ()
     {
@@ -22,6 +31,10 @@ public class PlaygroundOwnerMenu implements Menu
         System.out.println(toPrint);
     }
 
+    /**
+     *Handles the playground owner's choice from menu.
+     * @return boolean equals true when playground owner choose to add new play ground or show bookings, and false when they exit the app.
+     */
     public boolean Handle ()
     {
         switch(MenuManager.getIntInput())
