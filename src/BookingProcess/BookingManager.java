@@ -7,6 +7,11 @@ import java.util.ArrayList;
 public class BookingManager
 {
     static private ArrayList<Book> bookings = new ArrayList<Book>();
+
+    /**
+     * get all bookings.
+     * @return bookings.
+     */
     static public ArrayList<Book> getBookings () { return  bookings; }
     static private ArrayList<Book> bookings = new ArrayList<Book>();
 

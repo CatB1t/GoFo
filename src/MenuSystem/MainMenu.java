@@ -1,10 +1,11 @@
 package MenuSystem;
 
-/**
- * shows main menu for clients to choose what they want whether to register,log in or exit the whole app.
- */
+
 public class MainMenu implements Menu
 {
+    /**
+     * shows main menu for clients to choose what they want whether to register,log in or exit the whole app.
+     */
     public void Show ()
     {
         String toPrint = "========= GoFo =========\n" +

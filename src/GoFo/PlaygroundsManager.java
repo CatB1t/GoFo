@@ -12,6 +12,11 @@ public class PlaygroundsManager
      */
     static public ArrayList<Playground> getPlaygrounds() { return playgrounds; }
 
+    /**
+     * Gets the playground using its index.
+     * @param index index of the playground in the arraylist of playgrounds.
+     * @return playground .
+     */
     static public Playground getPlayground(int index)
     {
         return playgrounds.get(index);

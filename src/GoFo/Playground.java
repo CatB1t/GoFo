@@ -55,6 +55,10 @@ public class Playground
         availableSchedule.add(slot);
     }
 
+    /**
+     * Gets playground name.
+     * @return na,e of the playground.
+     */
     public String getName() { return name; }
     /**
      * Books a slot and adds it to the booked schedule.
