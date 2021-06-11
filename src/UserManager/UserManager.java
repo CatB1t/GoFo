@@ -18,7 +18,10 @@ public class UserManager {
      */
     static public boolean createUser(String name,  String password, String email, String number, String location, UserType type)
     {
-        // TODO Check for valid user
+
+        if(UserManager.isValidUser(name))
+            return false;
+
         User tmp;
         if(type == UserType.PlaygroundOwner)
             tmp = new PlaygroundOwner(name, password, email, number, location);
@@ -55,5 +58,16 @@ public class UserManager {
     static public User getUser(int index)
     {
         return registeredUsers.get(index);
+    }
+
+    static public boolean isValidUser(String name)
+    {
+        for(User user: registeredUsers) {
+            if(name.equalsIgnoreCase(user.getName()))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

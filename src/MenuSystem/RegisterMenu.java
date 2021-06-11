@@ -24,7 +24,7 @@ public class RegisterMenu implements Menu
      */
     public boolean Handle ()
     {
-        switch(MenuManager.getIntInput())
+        switch(MenuManager.getInputChoice(1,3))
         {
             case 1: // Player
                 createUser(UserType.Player);
@@ -68,7 +68,14 @@ public class RegisterMenu implements Menu
         MenuManager.clearBuffer();
         location = MenuManager.keyboard.nextLine();
 
-        UserManager.createUser(name, password, email, phone, location, type);
+        if(UserManager.createUser(name, password, email, phone, location, type))
+        {
+            System.out.println("Registered successfully");
+        }
+        else {
+            System.out.println("User already exist");
+        }
+
         return true;
     }
 }

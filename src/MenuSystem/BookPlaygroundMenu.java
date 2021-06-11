@@ -63,7 +63,7 @@ public class BookPlaygroundMenu implements Menu
         if(shouldSkipInput)
             return true;
 
-        int choice = MenuManager.getIntInput();
+        int choice = MenuManager.getInputChoice(1, endIndex);
 
         if(choice < 0 || choice > endIndex + 1) // TODO loop for valid input
         {

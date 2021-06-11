@@ -43,6 +43,25 @@ public class MenuManager
         return keyboard.nextInt();
     }
 
+    static public int getInputChoice(int min, int max)
+    {
+        int toReturn = 0;
+        while(true)
+        {
+            System.out.print("Enter your choice: ");
+            if(keyboard.hasNextInt()) {
+                toReturn = keyboard.nextInt();
+                if(toReturn <= max && toReturn >= min)
+                {
+                    break;
+                }
+            }
+            clearBuffer();
+            System.out.print("Not a valid choice. Try again: ");
+        }
+        return toReturn;
+    }
+
     static public int getIntInput()
     {
         // TODO input validation

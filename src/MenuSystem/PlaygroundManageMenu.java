@@ -80,11 +80,7 @@ public class PlaygroundManageMenu implements Menu
 
         System.out.println(toPrint);
 
-        // TODO handle input
-        int choice = MenuManager.getIntInput();
-        // TODO loop for valid input
-        if(choice < 1 || choice > cachedSlots.size())
-            return;
+        int choice = MenuManager.getInputChoice(1, cachedSlots.size() + 1);
 
         if(choice == cachedSlots.size())
             return;

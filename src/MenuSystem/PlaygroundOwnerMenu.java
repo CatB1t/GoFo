@@ -42,7 +42,7 @@ public class PlaygroundOwnerMenu implements Menu
      */
     public boolean Handle ()
     {
-        switch(MenuManager.getIntInput())
+        switch(MenuManager.getInputChoice(1,3))
         {
             case 1: // Create
                 createPlayground();
@@ -101,13 +101,7 @@ public class PlaygroundOwnerMenu implements Menu
         toPrint += (playgrounds.size() + 1) + ". Return";
         System.out.println(toPrint);
 
-        int choice = MenuManager.getIntInput();
-        // TODO loop for valid input
-        if(choice < 1 || choice > playgrounds.size())
-        {
-            System.out.println("Invalid Input");
-            return;
-        }
+        int choice = MenuManager.getInputChoice(1, playgrounds.size() + 1);
 
         if(choice == playgrounds.size() + 1)
             return;

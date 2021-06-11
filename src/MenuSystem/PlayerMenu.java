@@ -41,7 +41,7 @@ public class PlayerMenu implements Menu
 
     public boolean Handle ()
     {
-        switch(MenuManager.getIntInput())
+        switch(MenuManager.getInputChoice(1,3))
         {
             case 1: // Show playgrounds
                 showAvailablePlaygrounds();
@@ -72,7 +72,7 @@ public class PlayerMenu implements Menu
         for(int i = 0; i < myBookings.size(); ++i)
         {
             Book cached = myBookings.get(i);
-            toPrint += (i + 1) + "Day: " + cached.bookedSlot.day + ", Playground: " + cached.playground.getName() + "\n";
+            toPrint += (i + 1) + ". Day: " + cached.bookedSlot.day + ", Playground: " + cached.playground.getName() + "\n";
         }
 
         System.out.println(toPrint);
@@ -101,7 +101,6 @@ public class PlayerMenu implements Menu
         toPrint += (playgrounds.size() + 1) + ". Return";
         System.out.println(toPrint);
 
-        // TODO handle input
         int choice = MenuManager.getIntInput();
 
         // TODO Loop for valid input

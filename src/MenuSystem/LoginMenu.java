@@ -20,6 +20,7 @@ public class LoginMenu implements Menu
     {
         String name,password;
 
+        // TODO refactor
         System.out.print("Enter username: ");
         name = MenuManager.keyboard.next();
         System.out.print("Enter password (case sensitive): ");

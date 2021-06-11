@@ -21,7 +21,7 @@ public class MainMenu implements Menu
      */
     public boolean Handle ()
     {
-        switch(MenuManager.getIntInput())
+        switch(MenuManager.getInputChoice(1,3))
         {
             case 1: // Register
                 MenuManager.addMenuToStack(new RegisterMenu());
