@@ -14,9 +14,39 @@ public class MenuManager
         keyboard = new Scanner(System.in);
     }
 
+    static public String getStringWordInput (String toPrint)
+    {
+        System.out.println(toPrint);
+        return keyboard.next();
+    }
+
+    static public String getStringLineInput(String toPrint)
+    {
+        System.out.println();
+        return keyboard.nextLine();
+    }
+
+    static public String getStringWordInput()
+    {
+        return keyboard.next();
+    }
+
+    static public String getStringLineInput()
+    {
+        return keyboard.nextLine();
+    }
+
+    static public int getIntInput(String toPrint)
+    {
+        // TODO input validation
+        System.out.print(toPrint);
+        return keyboard.nextInt();
+    }
+
     static public int getIntInput()
     {
         // TODO input validation
+        System.out.print("Enter your choice: ");
         return keyboard.nextInt();
     }
 

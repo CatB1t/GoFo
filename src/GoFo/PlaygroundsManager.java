@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class PlaygroundsManager
 {
-    static private ArrayList<Playground> playgrounds;
+    static private ArrayList<Playground> playgrounds = new ArrayList<Playground>();
 
     static public ArrayList<Playground> getPlaygrounds() { return playgrounds; }
 

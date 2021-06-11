@@ -35,6 +35,7 @@ public class Playground
         availableSchedule.add(slot);
     }
 
+    public String getName() { return name; }
     public void bookSlot(int index)
     {
         bookedSchedule.add(availableSchedule.get(index));

@@ -9,7 +9,12 @@ public class UserManager {
     static public boolean createUser(String name,  String password, String email, String number, String location, UserType type)
     {
         // TODO Check for valid user
-        User tmp = new User(name, password, email, number, location, type);
+        User tmp;
+        if(type == UserType.PlaygroundOwner)
+            tmp = new PlaygroundOwner(name, password, email, number, location, type);
+        else
+            tmp = new Player(name, password, email, number, location, type);
+
         registeredUsers.add(tmp);
         return true;
     }

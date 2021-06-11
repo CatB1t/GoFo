@@ -7,10 +7,10 @@ public class RegisterMenu implements Menu
 {
     public void Show ()
     {
-        String toPrint = "========= Register =========\n " +
+        String toPrint = "========= Register =========\n" +
                 "Choose the role:\n" +
-                "1. Playground Owner\n" +
-                "2. Player\n" +
+                "1. Player\n" +
+                "2. Playground Owner\n" +
                 "3. Return\n";
         System.out.println(toPrint);
     }
@@ -19,13 +19,13 @@ public class RegisterMenu implements Menu
     {
         switch(MenuManager.getIntInput())
         {
-            case 1: // Playground Owner
-                createUser(UserType.PlaygroundOwner);
+            case 1: // Player
+                createUser(UserType.Player);
                 MenuManager.ignoreMenuInStack(this);
                 MenuManager.addMenuToStack(new LoginMenu());
                 return false;
-            case 2: // Playground
-                createUser(UserType.Player);
+            case 2: // Playground Owner
+                createUser(UserType.PlaygroundOwner);
                 MenuManager.ignoreMenuInStack(this);
                 MenuManager.addMenuToStack(new LoginMenu());
                 return false;

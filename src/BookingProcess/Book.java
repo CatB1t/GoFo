@@ -19,4 +19,18 @@ public class Book
         this.bookDate = date;
     }
 
+    public String simpleInfo()
+    {
+        return "Playground Name: " + playground.getName() + ", Date: " + bookDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "playground=" + playground +
+                ", bookedByPlayer=" + bookedByPlayer +
+                ", bookedSlot=" + bookedSlot +
+                ", bookDate='" + bookDate + '\'' +
+                '}';
+    }
 }
