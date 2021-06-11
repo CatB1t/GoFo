@@ -95,10 +95,10 @@ public class PlaygroundOwnerMenu implements Menu
         String toPrint = "";
         for(int i = 0; i < playgrounds.size(); i++)
         {
-            toPrint = "" + (i + 1) + ". " + playgrounds.get(i).getName() + "\n";
+            toPrint += "" + (i + 1) + ". " + playgrounds.get(i).getName() + "\n";
         }
 
-        toPrint += (playgrounds.size() + 1) + ". Return.";
+        toPrint += (playgrounds.size() + 1) + ". Return";
         System.out.println(toPrint);
 
         int choice = MenuManager.getIntInput();

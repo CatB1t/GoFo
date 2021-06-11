@@ -16,10 +16,11 @@ public class PlaygroundManageMenu implements Menu
 
     public void Show()
     {
-        String toPrint = "======" + playground.getName() + "======\n"
-                + "1. Add slot.\n"
-                + "2. Remove slot.\n"
-                + "3. Return.\n";
+        String toPrint = "====== " + playground.getName() + " ======\n"
+                + "1. Add slot\n"
+                + "2. Remove slot\n"
+                + "3. Show available slots\n"
+                + "4. Return\n";
 
         System.out.println(toPrint);
     }
@@ -36,7 +37,10 @@ public class PlaygroundManageMenu implements Menu
                 // Remove slots
                 removeSlot();
                 return false;
-            case 3: // Return
+            case 3:
+                showAvailableSlots();
+                return false;
+            case 4: // Return
                 return true;
             default:
                 System.out.println("Invalid choice");
@@ -49,7 +53,6 @@ public class PlaygroundManageMenu implements Menu
         String date = MenuManager.getStringWordInput("Enter date of the slot (day/month/year): ");
         String start = MenuManager.getStringWordInput("Enter start time of the slot (00:00) to (24:00): ");
         String end = MenuManager.getStringWordInput("Enter end time of the slot (00:00) to (24:00): ");
-
         playground.createSlot(start, end, date);
     }
 
@@ -85,5 +88,24 @@ public class PlaygroundManageMenu implements Menu
         playground.removeSlot(choice - 1);
         System.out.println("Slot removed");
         return;
+    }
+
+    private void showAvailableSlots()
+    {
+        ArrayList<Slot> slots = playground.getAvailableSchedule();
+
+        if(slots.isEmpty())
+        {
+            System.out.println("No slots available.");
+        }
+
+        String toPrint = "";
+
+        for(int i = 0; i < slots.size(); i++)
+        {
+            toPrint += (i + 1) + ". " + slots.get(i).toString() +"\n";
+        }
+
+        System.out.println(toPrint);
     }
 }
