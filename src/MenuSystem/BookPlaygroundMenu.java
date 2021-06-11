@@ -15,11 +15,19 @@ public class BookPlaygroundMenu implements Menu
 
     private int endIndex = 0;
 
+    /**
+     * parametrized constructor set values to the playground the player want to book.
+     * @param index index of the playground the player want to book.
+     * @param player the player who wants to book the playground.
+     */
     public BookPlaygroundMenu(int index, Player player)
     {
         playgroundToBook = PlaygroundsManager.getPlayground(index);
     }
 
+    /**
+     * make player choose a slot for the playground they want to book.
+     */
     public void Show()
     {
         String toPrint = "====== Booking for " + playgroundToBook.getName() + "======\n"
@@ -35,6 +43,10 @@ public class BookPlaygroundMenu implements Menu
         System.out.println(toPrint);
     }
 
+    /**
+     *Handles player's choice
+     * @return true
+     */
     public boolean Handle()
     {
         int choice = MenuManager.getIntInput();
