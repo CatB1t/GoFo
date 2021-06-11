@@ -55,6 +55,9 @@ public class PlayerMenu implements Menu
         return true;
     }
 
+    /**
+     * Shows all the player's booking and if there is not any bookings it displays a message to inform the player.
+     */
     private void showMyBookings ()
     {
         ArrayList<Book> myBookings = currentUser.getAllBookings();
@@ -76,6 +79,9 @@ public class PlayerMenu implements Menu
         }
     }
 
+    /**
+     * Shows all available playgrounds for booking and if there is not any available ones it displays a message to inform the player.
+     */
     private void showAvailablePlaygrounds()
     {
         ArrayList<Playground> playgrounds = PlaygroundsManager.getPlaygrounds();
