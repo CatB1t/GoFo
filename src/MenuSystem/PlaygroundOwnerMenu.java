@@ -1,10 +1,12 @@
 package MenuSystem;
 
 import BookingProcess.Book;
+import GoFo.Playground;
 import GoFo.PlaygroundsManager;
 import UserManager.PlaygroundOwner;
 import UserManager.UserManager;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class PlaygroundOwnerMenu implements Menu
@@ -45,13 +47,18 @@ public class PlaygroundOwnerMenu implements Menu
             case 1: // Create
                 createPlayground();
                 return false;
-            case 2: // Show Booking
+            case 2: // Show Playgrounds
+                showPlaygrounds();
+                return false;
+            case 3: // Show Bookings
                 showBookings();
                 return false;
-            case 3: // Exit
+            case 4: // Exit
                 return true;
+            default:
+                System.out.println("Invalid input");
+                return false;
         }
-        return true;
     }
 
     private boolean createPlayground()
@@ -74,6 +81,24 @@ public class PlaygroundOwnerMenu implements Menu
         return true;
     }
 
+    private void showPlaygrounds()
+    {
+        ArrayList<Playground> playgrounds = currentUser.getOwnedPlaygrounds();
+        if(playgrounds.size() <= 0)
+        {
+            System.out.println("No available playgrounds to show.");
+            return;
+        }
+
+        String toPrint = "";
+        for(int i = 0; i < playgrounds.size(); i++)
+        {
+            toPrint = "" + i + ". " + playgrounds.get(i).getName() + "\n";
+        }
+
+        // TODO handle choice
+    }
+
     private void showBookings ()
     {
         ArrayList<Book> myBookings = new ArrayList<Book>();
@@ -87,9 +112,10 @@ public class PlaygroundOwnerMenu implements Menu
         String toPrint = "";
         for(int i = 0; i < myBookings.size(); i++)
         {
-            toPrint = "" + i + ". " + myBookings.get(i).simpleInfo();
+            toPrint = "" + i + ". " + myBookings.get(i).simpleInfo() + "\n";
         }
 
+        System.out.println(toPrint);
         // TODO handle
     }
 }
