@@ -9,11 +9,18 @@ public class PlaygroundManageMenu implements Menu
 {
     Playground playground;
 
+    /**
+     * Parametrized constructor sets playground.
+     * @param playground.
+     */
     public PlaygroundManageMenu(Playground playground)
     {
         this.playground = playground;
     }
 
+    /**
+     * Show playground menu so the playground owner can choose between adding or removing a slot,showing available slots or return to previous page.
+     */
     public void Show()
     {
         String toPrint = "====== " + playground.getName() + " ======\n"
@@ -26,6 +33,10 @@ public class PlaygroundManageMenu implements Menu
         System.out.println(toPrint);
     }
 
+    /**
+     * Handles playground owner's choice.
+     * @return false when owner chooese to add , remove or enters invalid option,and return true if they decided to show avilable slots.
+     */
     public boolean Handle()
     {
         switch(MenuManager.getIntInput())
@@ -52,6 +63,9 @@ public class PlaygroundManageMenu implements Menu
         }
     }
 
+    /**
+     * Adds a slot.
+     */
     private void addSlot()
     {
         String date = MenuManager.getStringWordInput("Enter date of the slot (day/month/year): ");
@@ -60,6 +74,9 @@ public class PlaygroundManageMenu implements Menu
         playground.createSlot(start, end, date);
     }
 
+    /**
+     * Removes a slot.
+     */
     private void removeSlot()
     {
         ArrayList<Slot> cachedSlots = playground.getAvailableSchedule();
@@ -90,6 +107,9 @@ public class PlaygroundManageMenu implements Menu
         return;
     }
 
+    /**
+     * Shows all available slots.
+     */
     private void showAvailableSlots()
     {
         ArrayList<Slot> slots = playground.getAvailableSchedule();
