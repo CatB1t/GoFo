@@ -82,6 +82,9 @@ public class PlaygroundOwnerMenu implements Menu
         return true;
     }
 
+    /**
+     * Shows playgrouns.
+     */
     private void showPlaygrounds()
     {
         ArrayList<Playground> playgrounds = currentUser.getOwnedPlaygrounds();
