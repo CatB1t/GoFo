@@ -62,7 +62,7 @@ public class PlayerMenu implements Menu
     {
         ArrayList<Book> myBookings = currentUser.getAllBookings();
 
-        if(myBookings.size() <= 0)
+        if(myBookings.isEmpty())
         {
             System.out.println("There's no bookings available to show.");
             return;
@@ -72,9 +72,7 @@ public class PlayerMenu implements Menu
         for(int i = 0; i < myBookings.size(); ++i)
         {
             Book cached = myBookings.get(i);
-            toPrint = "" + i +
-            cached.bookedSlot.day + "\n" +
-            ", " + cached.playground + "\n";
+            toPrint += (i + 1) + "Day: " + cached.bookedSlot.day + ", Playground: " + cached.playground.getName() + "\n";
         }
 
         System.out.println(toPrint);
@@ -97,9 +95,26 @@ public class PlayerMenu implements Menu
         for(int i = 0; i < playgrounds.size(); i++)
         {
             Playground cached = playgrounds.get(i);
-            toPrint = "" + i + cached.getName() + "\n";
+            toPrint += (i + 1) + ". " + cached.getName() + "\n";
         }
 
+        toPrint += (playgrounds.size() + 1) + ". Return";
         System.out.println(toPrint);
+
+        // TODO handle input
+        int choice = MenuManager.getIntInput();
+
+        // TODO Loop for valid input
+        if(choice < 1 || choice > (playgrounds.size() + 1))
+        {
+            System.out.println("Invalid input");
+            return;
+        }
+
+        if(choice == (playgrounds.size() + 1)) {
+            return;
+        }
+
+        MenuManager.addMenuToStack(new BookPlaygroundMenu(choice - 1, currentUser));
     }
 }

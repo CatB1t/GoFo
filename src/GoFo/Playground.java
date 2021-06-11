@@ -75,6 +75,23 @@ public class Playground
         availableSchedule.remove(slot);
     }
 
+    public long getPricePerHour () {
+        return pricePerHour;
+    }
 
+    public String getLocation ()
+    {
+        return location;
+    }
 
+    public int getSize()
+    {
+        return size;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Playground: " + name + ". Price per hour: " + pricePerHour + ". Location: " + location + ". Size: " + size + ".";
+    }
 }

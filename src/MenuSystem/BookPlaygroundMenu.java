@@ -12,6 +12,7 @@ public class BookPlaygroundMenu implements Menu
 {
     private Playground playgroundToBook;
     private Player playerToBook;
+    private boolean shouldSkipInput = false;
 
     private int endIndex = 0;
 
@@ -23,6 +24,7 @@ public class BookPlaygroundMenu implements Menu
     public BookPlaygroundMenu(int index, Player player)
     {
         playgroundToBook = PlaygroundsManager.getPlayground(index);
+        playerToBook = player;
     }
 
     /**
@@ -30,10 +32,19 @@ public class BookPlaygroundMenu implements Menu
      */
     public void Show()
     {
-        String toPrint = "====== Booking for " + playgroundToBook.getName() + "======\n"
-                + "Choose a slot :\n";
-
         ArrayList<Slot> cached = playgroundToBook.getAvailableSchedule();
+
+        if(cached.isEmpty())
+        {
+            System.out.println("\nNo schedule available for this playground");
+            shouldSkipInput = true;
+            return;
+        }
+
+        String toPrint = "\n====== Booking for " + playgroundToBook.getName() + " ======\n"
+                + "Price per hour: " + playgroundToBook.getPricePerHour() + " EGP, Location: " + playgroundToBook.getLocation() + "Size: " + playgroundToBook.getSize()
+                + "\nChoose a slot :\n";
+
         endIndex = cached.size();
         for(int i = 0; i < cached.size(); i++)
         {
@@ -49,18 +60,22 @@ public class BookPlaygroundMenu implements Menu
      */
     public boolean Handle()
     {
+        if(shouldSkipInput)
+            return true;
+
         int choice = MenuManager.getIntInput();
 
-        if(choice < 0 || choice > endIndex) // TODO loop for valid input
+        if(choice < 0 || choice > endIndex + 1) // TODO loop for valid input
         {
             System.out.println("Invalid input");
             return true;
         }
 
-        if(choice == endIndex)
+        if(choice == endIndex + 1)
             return true;
 
         // TODO show confirmation to book
+        System.out.println("Booked slot successfully");
         BookingManager.bookSlot(playerToBook, playgroundToBook , playgroundToBook.getAvailableSchedule().get(choice - 1));
         return true;
     }
