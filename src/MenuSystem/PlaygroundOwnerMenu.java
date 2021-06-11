@@ -14,12 +14,12 @@ public class PlaygroundOwnerMenu implements Menu
     private PlaygroundOwner currentUser;
 
     /**
-     *
-     * @param playerIndex
+     * parametrized constructor sets value for current user.
+     * @param playgroundOwnerIndex index of the playground owner.
      */
-    public PlaygroundOwnerMenu(int playerIndex)
+    public PlaygroundOwnerMenu(int playgroundOwnerIndex)
     {
-        currentUser = (PlaygroundOwner) UserManager.getUser(playerIndex);
+        currentUser = (PlaygroundOwner) UserManager.getUser(playgroundOwnerIndex);
     }
 
     /**
@@ -61,6 +61,10 @@ public class PlaygroundOwnerMenu implements Menu
         }
     }
 
+    /**
+     * Creates a new playground using data taken from playground owner.
+     * @return true after creating the new playground successfully.
+     */
     private boolean createPlayground()
     {
 
@@ -81,6 +85,7 @@ public class PlaygroundOwnerMenu implements Menu
         return true;
     }
 
+<<<<<<< Updated upstream
     private void showPlaygrounds()
     {
         ArrayList<Playground> playgrounds = currentUser.getOwnedPlaygrounds();
@@ -100,6 +105,11 @@ public class PlaygroundOwnerMenu implements Menu
         // TODO handle choice
     }
 
+=======
+    /**
+     * Shows all the playgrounds and displays a message to inform the playground owner if there is not any bookings.
+     */
+>>>>>>> Stashed changes
     private void showBookings ()
     {
         ArrayList<Book> myBookings = new ArrayList<Book>();

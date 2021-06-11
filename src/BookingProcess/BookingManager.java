@@ -8,6 +8,13 @@ public class BookingManager
 {
     static private ArrayList<Book> bookings = new ArrayList<Book>();
     static public ArrayList<Book> getBookings () { return  bookings; }
+    static private ArrayList<Book> bookings = new ArrayList<Book>();
+
+    /**
+     * Gets all bookings.
+     * @return bookings.
+     */
+    static public ArrayList<Book> getBookings () { return  bookings; }
 
     /**
      * books a slot , add it to the bookings using player info,playground info and slot's info

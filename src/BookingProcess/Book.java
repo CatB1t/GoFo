@@ -24,11 +24,19 @@ public class Book
         this.bookedSlot = slot;
     }
 
+    /**
+     * Displays simple information about the booked playground and day of booking.
+     * @return name of the booked playground and date of booking.
+     */
     public String simpleInfo()
     {
         return "Playground Name: " + playground.getName() + ", Date: " + bookedSlot.day;
     }
 
+    /**
+     *Displays detailed bookin information.
+     * @return String contains playground, name of the player who booked it, booked slot and booking date.
+     */
     @Override
     public String toString() {
         return "Book{" +
