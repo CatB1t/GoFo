@@ -11,9 +11,9 @@ public class PlaygroundOwner extends User
 
     private ArrayList<Playground> ownedPlaygrounds = new ArrayList<Playground>();
 
-    public PlaygroundOwner(String name, String password, String email, String phone, String location, UserType type)
+    public PlaygroundOwner(String name, String password, String email, String phone, String location)
     {
-        super(name, password, email, phone, location, type);
+        super(name, password, email, phone, location, UserType.PlaygroundOwner);
     }
 
     public ArrayList<Playground> getOwnedPlaygrounds()

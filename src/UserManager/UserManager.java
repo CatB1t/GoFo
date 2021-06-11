@@ -21,9 +21,9 @@ public class UserManager {
         // TODO Check for valid user
         User tmp;
         if(type == UserType.PlaygroundOwner)
-            tmp = new PlaygroundOwner(name, password, email, number, location, type);
+            tmp = new PlaygroundOwner(name, password, email, number, location);
         else
-            tmp = new Player(name, password, email, number, location, type);
+            tmp = new Player(name, password, email, number, location);
 
         registeredUsers.add(tmp);
         return true;
