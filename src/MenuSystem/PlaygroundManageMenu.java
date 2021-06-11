@@ -20,7 +20,8 @@ public class PlaygroundManageMenu implements Menu
                 + "1. Add slot\n"
                 + "2. Remove slot\n"
                 + "3. Show available slots\n"
-                + "4. Return\n";
+                + "4. Show info\n"
+                + "5. Return\n";
 
         System.out.println(toPrint);
     }
@@ -40,7 +41,10 @@ public class PlaygroundManageMenu implements Menu
             case 3:
                 showAvailableSlots();
                 return false;
-            case 4: // Return
+            case 4:
+                System.out.println(playground.toString());
+                return false;
+            case 5: // Return
                 return true;
             default:
                 System.out.println("Invalid choice");
