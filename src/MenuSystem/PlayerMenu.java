@@ -73,7 +73,7 @@ public class PlayerMenu implements Menu
         {
             Book cached = myBookings.get(i);
             toPrint = "" + i +
-            cached.bookDate + "\n" +
+            cached.bookedSlot.day + "\n" +
             ", " + cached.playground + "\n";
         }
 

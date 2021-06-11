@@ -31,7 +31,7 @@ public class PlaygroundOwnerMenu implements Menu
         String toPrint = "========= Playground Owner Menu =========\n" +
                 "Welcome Back " + currentUser.getName() + "!\n" +
                 "1. Create playground\n" +
-                "2. Show booking requests\n" +
+                "2. Show playgrounds\n" +
                 "3. Logout\n";
         System.out.println(toPrint);
     }
@@ -50,10 +50,7 @@ public class PlaygroundOwnerMenu implements Menu
             case 2: // Show Playgrounds
                 showPlaygrounds();
                 return false;
-            case 3: // Show Bookings
-                showBookings();
-                return false;
-            case 4: // Exit
+            case 3: // Exit
                 return true;
             default:
                 System.out.println("Invalid input");
@@ -85,11 +82,11 @@ public class PlaygroundOwnerMenu implements Menu
         return true;
     }
 
-<<<<<<< Updated upstream
     private void showPlaygrounds()
     {
         ArrayList<Playground> playgrounds = currentUser.getOwnedPlaygrounds();
-        if(playgrounds.size() <= 0)
+
+        if(playgrounds.isEmpty())
         {
             System.out.println("No available playgrounds to show.");
             return;
@@ -98,18 +95,29 @@ public class PlaygroundOwnerMenu implements Menu
         String toPrint = "";
         for(int i = 0; i < playgrounds.size(); i++)
         {
-            toPrint = "" + i + ". " + playgrounds.get(i).getName() + "\n";
+            toPrint = "" + (i + 1) + ". " + playgrounds.get(i).getName() + "\n";
         }
 
+        toPrint += (playgrounds.size() + 1) + ". Return.";
         System.out.println(toPrint);
-        // TODO handle choice
+
+        int choice = MenuManager.getIntInput();
+        // TODO loop for valid input
+        if(choice < 1 || choice > playgrounds.size())
+        {
+            System.out.println("Invalid Input");
+            return;
+        }
+
+        if(choice == playgrounds.size() + 1)
+            return;
+
+        MenuManager.addMenuToStack(new PlaygroundManageMenu(playgrounds.get(choice - 1)));
     }
 
-=======
     /**
      * Shows all the playgrounds and displays a message to inform the playground owner if there is not any bookings.
      */
->>>>>>> Stashed changes
     private void showBookings ()
     {
         ArrayList<Book> myBookings = new ArrayList<Book>();
@@ -127,6 +135,5 @@ public class PlaygroundOwnerMenu implements Menu
         }
 
         System.out.println(toPrint);
-        // TODO handle
     }
 }

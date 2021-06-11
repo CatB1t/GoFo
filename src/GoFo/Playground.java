@@ -55,15 +55,22 @@ public class Playground
         availableSchedule.add(slot);
     }
 
+    public void removeSlot(int index)
+    {
+        availableSchedule.remove(index);
+    }
+
     public String getName() { return name; }
     /**
      * Books a slot and adds it to the booked schedule.
-     * @param index index of the slot that will be booked.
+     * @param slot the slot that will be booked.
      */
     public void bookSlot(Slot slot)
     {
         bookedSchedule.add(slot);
         availableSchedule.remove(slot);
     }
+
+
 
 }

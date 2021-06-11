@@ -25,6 +25,7 @@ public class PlaygroundOwner extends User
     {
         // TODO pass owner as a reference
         Playground playground = new Playground(name, location, size, perPriceHour);
+        ownedPlaygrounds.add(playground);
         PlaygroundsManager.addPlayground(playground);
         return true;
     }
