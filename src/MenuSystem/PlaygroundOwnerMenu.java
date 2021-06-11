@@ -96,6 +96,7 @@ public class PlaygroundOwnerMenu implements Menu
             toPrint = "" + i + ". " + playgrounds.get(i).getName() + "\n";
         }
 
+        System.out.println(toPrint);
         // TODO handle choice
     }
 

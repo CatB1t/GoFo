@@ -6,21 +6,22 @@ import java.util.ArrayList;
 
 public class BookingManager
 {
-    private ArrayList<Book> bookings = new ArrayList<Book>();
-    public ArrayList<Book> getBookings () { return  bookings; }
+    static private ArrayList<Book> bookings = new ArrayList<Book>();
+    static public ArrayList<Book> getBookings () { return  bookings; }
 
     /**
      * books a slot , add it to the bookings using player info,playground info and slot's info
      * @param player player who booked the playground
      * @param playground the booked playground
      * @param slot the booked slot
-     * @param bookDate date on which a playground slot is booked
      * @return true when the process of booking a slot is completed
      */
-    public boolean bookSlot(Player player, Playground playground, Slot slot, String bookDate)
+    static public boolean bookSlot(Player player, Playground playground, Slot slot)
     {
-        Book book = new Book(player, playground, slot, bookDate);
+        Book book = new Book(player, playground, slot);
         bookings.add(book);
+        player.addBooking(book); // Notify player
+        playground.bookSlot(slot); // Notify playground
         return true;
     }
 
@@ -29,7 +30,7 @@ public class BookingManager
      * @param index index of the booked slot
      * @return true when booking of a slot ix cancelled
      */
-    public boolean cancelBooking(int index)
+    static public boolean cancelBooking(int index)
     {
         bookings.remove(index);
         return true;

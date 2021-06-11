@@ -60,9 +60,10 @@ public class Playground
      * Books a slot and adds it to the booked schedule.
      * @param index index of the slot that will be booked.
      */
-    public void bookSlot(int index)
+    public void bookSlot(Slot slot)
     {
-        bookedSchedule.add(availableSchedule.get(index));
+        bookedSchedule.add(slot);
+        availableSchedule.remove(slot);
     }
 
 }

@@ -12,6 +12,11 @@ public class PlaygroundsManager
      */
     static public ArrayList<Playground> getPlaygrounds() { return playgrounds; }
 
+    static public Playground getPlayground(int index)
+    {
+        return playgrounds.get(index);
+    }
+
     /**
      *Adds new playground.
      * @param playground The newly added playground.

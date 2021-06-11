@@ -71,9 +71,10 @@ public class PlayerMenu implements Menu
             Book cached = myBookings.get(i);
             toPrint = "" + i +
             cached.bookDate + "\n" +
-            ", " + cached.playground;
-            System.out.println(toPrint);
+            ", " + cached.playground + "\n";
         }
+
+        System.out.println(toPrint);
     }
 
     private void showAvailablePlaygrounds()
@@ -90,8 +91,9 @@ public class PlayerMenu implements Menu
         for(int i = 0; i < playgrounds.size(); i++)
         {
             Playground cached = playgrounds.get(i);
-            toPrint = "" + i + cached.getName();
-            System.out.println(toPrint);
+            toPrint = "" + i + cached.getName() + "\n";
         }
+
+        System.out.println(toPrint);
     }
 }
