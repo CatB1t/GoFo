@@ -5,6 +5,9 @@ import UserManager.UserManager;
 
 public class RegisterMenu implements Menu
 {
+    /**
+     *Shows a menu contains available user types: player and Playground owner.
+     */
     public void Show ()
     {
         String toPrint = "========= Register =========\n" +
@@ -15,6 +18,10 @@ public class RegisterMenu implements Menu
         System.out.println(toPrint);
     }
 
+    /**
+     *Handles user's choice as it sets user's type to register them.
+     * @return false when user chose either player or owner,and true if the decided to go back to the previous page.
+     */
     public boolean Handle ()
     {
         switch(MenuManager.getIntInput())
@@ -35,6 +42,11 @@ public class RegisterMenu implements Menu
         return false;
     }
 
+    /**
+     *creates a new user according to their type,using data taken from users as input.
+     * @param type user type whether they are players or playgrounds user.
+     * @return true when the process of creating a new user is complete.
+     */
     private boolean createUser (UserType type)
     {
 

@@ -12,11 +12,18 @@ public class PlayerMenu implements Menu
 {
     private Player currentUser;
 
+    /**
+     * sets the current user to the player using menu.
+     * @param playerIndex index of the player who will use the menu
+     */
     public PlayerMenu(int playerIndex)
     {
         currentUser = (Player) UserManager.getUser(playerIndex);
     }
 
+    /**
+     *shows the player menu that contains: show playgrounds,show player's bookings and exit the app.
+     */
     public void Show ()
     {
         String toPrint = "========= Player Menu =========\n" +
@@ -26,6 +33,11 @@ public class PlayerMenu implements Menu
                 "3. Logout\n";
         System.out.println(toPrint);
     }
+
+    /**
+     *Handles player's choice whether they chose to show playground,show bookings, or to exit the app.
+     * @return false when player chooses to show playgrounds or bookings,and return true when he exits.
+     */
 
     public boolean Handle ()
     {

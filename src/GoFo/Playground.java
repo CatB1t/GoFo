@@ -11,8 +11,15 @@ public class Playground
     private ArrayList<Slot> availableSchedule = new ArrayList<Slot>();
     private ArrayList<Slot> bookedSchedule = new ArrayList<Slot>();
 
+    /**
+     * gets available slots in the schedule.
+     * @return an array list of available slots.
+     */
     public ArrayList<Slot> getAvailableSchedule() { return availableSchedule; }
 
+    /**
+     * default constructor sets initial values for playground data.
+     */
     public Playground()
     {
         this.name = "";
@@ -21,6 +28,13 @@ public class Playground
         this.pricePerHour = 0;
     }
 
+    /**
+     * parametrized constructor that sets playground's data.
+     * @param name name of the playground
+     * @param location location of the playground.
+     * @param size size of the playground.
+     * @param pricePerHour playground's price per hour.
+     */
     public Playground(String name, String location, int size, long pricePerHour)
     {
         this.name = name;
@@ -29,6 +43,12 @@ public class Playground
         this.pricePerHour = pricePerHour;
     }
 
+    /**
+     * Creates a new a slot and adds it to the schedule.
+     * @param start starting time of the slot.
+     * @param end ending time of the slot.
+     * @param day day of the slot.
+     */
     public void createSlot(String start, String end, String day)
     {
         Slot slot = new Slot(start, end, day);
@@ -36,6 +56,10 @@ public class Playground
     }
 
     public String getName() { return name; }
+    /**
+     * Books a slot and adds it to the booked schedule.
+     * @param index index of the slot that will be booked.
+     */
     public void bookSlot(int index)
     {
         bookedSchedule.add(availableSchedule.get(index));
