@@ -42,7 +42,7 @@ public class BookPlaygroundMenu implements Menu
         }
 
         String toPrint = "\n====== Booking for " + playgroundToBook.getName() + " ======\n"
-                + "Price per hour: " + playgroundToBook.getPricePerHour() + " EGP, Location: " + playgroundToBook.getLocation() + "Size: " + playgroundToBook.getSize()
+                + "Price per hour: " + playgroundToBook.getPricePerHour() + " EGP, Location: " + playgroundToBook.getLocation() + ". Size: " + playgroundToBook.getSize()
                 + "\nChoose a slot :\n";
 
         endIndex = cached.size();

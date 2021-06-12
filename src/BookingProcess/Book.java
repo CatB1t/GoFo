@@ -38,11 +38,8 @@ public class Book
      * @return String contains playground, name of the player who booked it, booked slot and booking date.
      */
     @Override
-    public String toString() {
-        return "Book{" +
-                "playground=" + playground +
-                ", bookedByPlayer=" + bookedByPlayer +
-                ", bookedSlot=" + bookedSlot +
-                '}';
+    public String toString()
+    {
+        return "Playground: " + playground + "Day: " + bookedSlot.day + "Start Time: " + bookedSlot.startTime + ". " + bookedSlot.endTime + ".";
     }
 }

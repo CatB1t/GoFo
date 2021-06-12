@@ -28,6 +28,7 @@ public class MenuManager
     static public String getStringLineInput(String toPrint)
     {
         System.out.println(toPrint);
+        //clearBuffer();
         return keyboard.nextLine();
     }
 
