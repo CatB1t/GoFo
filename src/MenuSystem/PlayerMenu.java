@@ -107,6 +107,6 @@ public class PlayerMenu implements Menu
             return;
         }
 
-        MenuManager.addMenuToStack(new BookPlaygroundMenu(choice - 1, currentUser));
+        MenuManager.addMenu(new BookPlaygroundMenu(choice - 1, currentUser));
     }
 }

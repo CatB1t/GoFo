@@ -13,7 +13,7 @@ public class main {
         UserManager.createUser("d", "d", "", "", "", UserType.Player); // for test
 
         MenuManager Manager = new MenuManager();
-        MenuManager.addMenuToStack(new MainMenu());
+        MenuManager.addMenu(new MainMenu());
         Manager.run();
     }
 }

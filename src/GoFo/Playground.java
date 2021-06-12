@@ -66,7 +66,7 @@ public class Playground
 
     /**
      * Gets playground name.
-     * @return na,e of the playground.
+     * @return name of the playground.
      */
     public String getName() { return name; }
     /**

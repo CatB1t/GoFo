@@ -55,8 +55,8 @@ public class BookPlaygroundMenu implements Menu
     }
 
     /**
-     *Handles player's choice
-     * @return true
+     * Handles player's choice
+     * @return true to exit
      */
     public boolean Handle()
     {

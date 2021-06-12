@@ -24,10 +24,10 @@ public class MainMenu implements Menu
         switch(MenuManager.getInputChoice(1,3))
         {
             case 1: // Register
-                MenuManager.addMenuToStack(new RegisterMenu());
+                MenuManager.addMenu(new RegisterMenu());
                 return false;
             case 2: // Login
-                MenuManager.addMenuToStack(new LoginMenu());
+                MenuManager.addMenu(new LoginMenu());
                 return false;
             case 3: // Exit
                 return true;

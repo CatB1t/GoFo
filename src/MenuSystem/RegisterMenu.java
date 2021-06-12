@@ -28,13 +28,13 @@ public class RegisterMenu implements Menu
         {
             case 1: // Player
                 createUser(UserType.Player);
-                MenuManager.ignoreMenuInStack(this);
-                MenuManager.addMenuToStack(new LoginMenu());
+                MenuManager.ignoreMenu(this);
+                MenuManager.addMenu(new LoginMenu());
                 return false;
             case 2: // Playground Owner
                 createUser(UserType.PlaygroundOwner);
-                MenuManager.ignoreMenuInStack(this);
-                MenuManager.addMenuToStack(new LoginMenu());
+                MenuManager.ignoreMenu(this);
+                MenuManager.addMenu(new LoginMenu());
                 return false;
             case 3: // Return
                 return true;
@@ -56,6 +56,7 @@ public class RegisterMenu implements Menu
         password = MenuManager.getStringWordInput("Enter your password: ");
         email = MenuManager.getStringWordInput("Enter your email: ");
         phone = MenuManager.getStringWordInput("Enter your phone: ");
+        MenuManager.clearBuffer();
         location = MenuManager.getStringLineInput("Enter your location: ");
 
         if(UserManager.createUser(name, password, email, phone, location, type))

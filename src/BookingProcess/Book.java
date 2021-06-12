@@ -34,7 +34,7 @@ public class Book
     }
 
     /**
-     *Displays detailed bookin information.
+     * Displays detailed booking information.
      * @return String contains playground, name of the player who booked it, booked slot and booking date.
      */
     @Override

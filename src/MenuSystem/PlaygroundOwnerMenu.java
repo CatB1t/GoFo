@@ -2,11 +2,9 @@ package MenuSystem;
 
 import BookingProcess.Book;
 import GoFo.Playground;
-import GoFo.PlaygroundsManager;
 import UserManager.PlaygroundOwner;
 import UserManager.UserManager;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class PlaygroundOwnerMenu implements Menu
@@ -23,9 +21,8 @@ public class PlaygroundOwnerMenu implements Menu
     }
 
     /**
-     *Displays menu for playground owners so they can choose to: add a new playground,show booking requests or exit the app.
+     * Displays menu for playground owners so they can choose to: add a new playground,show booking requests or exit the app.
      */
-
     public void Show ()
     {
         String toPrint = "========= Playground Owner Menu =========\n" +
@@ -37,7 +34,7 @@ public class PlaygroundOwnerMenu implements Menu
     }
 
     /**
-     *Handles the playground owner's choice from menu.
+     * Handles the playground owner's choice from menu.
      * @return boolean equals true when playground owner choose to add new play ground or show bookings, and false when they exit the app.
      */
     public boolean Handle ()
@@ -74,7 +71,7 @@ public class PlaygroundOwnerMenu implements Menu
     }
 
     /**
-     * Shows playgrouns.
+     * Shows playgrounds.
      */
     private void showPlaygrounds()
     {
@@ -100,7 +97,7 @@ public class PlaygroundOwnerMenu implements Menu
         if(choice == playgrounds.size() + 1)
             return;
 
-        MenuManager.addMenuToStack(new PlaygroundManageMenu(playgrounds.get(choice - 1)));
+        MenuManager.addMenu(new PlaygroundManageMenu(playgrounds.get(choice - 1)));
     }
 
     /**

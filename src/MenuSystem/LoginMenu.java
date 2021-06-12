@@ -29,15 +29,15 @@ public class LoginMenu implements Menu
             return true;
         }
 
-        MenuManager.ignoreMenuInStack(this);
+        MenuManager.ignoreMenu(this);
 
         if(UserManager.getUser(loginStatus.userIndex).getType() == UserType.Player)
         {
-            MenuManager.addMenuToStack(new PlayerMenu(loginStatus.userIndex));
+            MenuManager.addMenu(new PlayerMenu(loginStatus.userIndex));
         }
         else if (UserManager.getUser(loginStatus.userIndex).getType() == UserType.PlaygroundOwner)
         {
-            MenuManager.addMenuToStack(new PlaygroundOwnerMenu(loginStatus.userIndex));
+            MenuManager.addMenu(new PlaygroundOwnerMenu(loginStatus.userIndex));
         }
 
         return false;
