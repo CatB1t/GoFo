@@ -55,6 +55,10 @@ public class Playground
         availableSchedule.add(slot);
     }
 
+    /**
+     * Removes a slot.
+     * @param index index of the slot that will be deleted.
+     */
     public void removeSlot(int index)
     {
         availableSchedule.remove(index);
@@ -75,19 +79,37 @@ public class Playground
         availableSchedule.remove(slot);
     }
 
+    /**
+     * Gets slot's price per hour.
+     * @return price of the slot per hour.
+     */
     public Double getPricePerHour () {
         return pricePerHour;
     }
 
+    /**
+     * Gets location of the playground.
+     * @return playground's location.
+     */
     public String getLocation ()
     {
         return location;
     }
 
+    /**
+     * Gets size of the playground.
+     * @return playground's size.
+     */
+
     public int getSize()
     {
         return size;
     }
+
+    /**
+     * Displays Statement with all playground's data.
+     * @return string contains playground's data such as:name,price per hour,location and size.
+     */
 
     @Override
     public String toString()
