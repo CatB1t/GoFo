@@ -100,12 +100,11 @@ public class PlaygroundManageMenu implements Menu
 
         int choice = MenuManager.getInputChoice(1, cachedSlots.size() + 1);
 
-        if(choice == cachedSlots.size())
+        if(choice == (cachedSlots.size() + 1) )
             return;
 
         playground.removeSlot(choice - 1);
         System.out.println("Slot removed");
-        return;
     }
 
     /**
