@@ -84,6 +84,7 @@ public class PlaygroundManageMenu implements Menu
         if(cachedSlots.isEmpty())
         {
             System.out.println("No available slots to remove.");
+            return;
         }
 
         String toPrint = "Choose a slot to remove:\n";
