@@ -4,7 +4,7 @@ import BookingProcess.BookingManager;
 import PlaygroundSystem.Playground;
 import PlaygroundSystem.PlaygroundsManager;
 import BookingProcess.Slot;
-import UserManager.Player;
+import UserSystem.Player;
 
 import java.util.ArrayList;
 

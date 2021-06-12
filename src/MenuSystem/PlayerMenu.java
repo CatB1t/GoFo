@@ -3,8 +3,8 @@ package MenuSystem;
 import BookingProcess.Book;
 import PlaygroundSystem.Playground;
 import PlaygroundSystem.PlaygroundsManager;
-import UserManager.UserManager;
-import UserManager.Player;
+import UserSystem.UserManager;
+import UserSystem.Player;
 
 import java.util.ArrayList;
 

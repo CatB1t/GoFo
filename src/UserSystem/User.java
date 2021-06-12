@@ -1,4 +1,4 @@
-package UserManager;
+package UserSystem;
 
 public class User
 {

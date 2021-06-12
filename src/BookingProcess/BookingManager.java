@@ -1,7 +1,7 @@
 package BookingProcess;
 
 import PlaygroundSystem.Playground;
-import UserManager.Player;
+import UserSystem.Player;
 import java.util.ArrayList;
 
 public class BookingManager

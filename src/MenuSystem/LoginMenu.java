@@ -1,6 +1,6 @@
 package MenuSystem;
 
-import UserManager.*;
+import UserSystem.*;
 
 public class LoginMenu implements Menu
 {

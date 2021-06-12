@@ -1,4 +1,4 @@
-package UserManager;
+package UserSystem;
 
 import PlaygroundSystem.Playground;
 import PlaygroundSystem.PlaygroundsManager;

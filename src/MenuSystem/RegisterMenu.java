@@ -1,7 +1,7 @@
 package MenuSystem;
 
-import UserManager.UserType;
-import UserManager.UserManager;
+import UserSystem.UserType;
+import UserSystem.UserManager;
 
 public class RegisterMenu implements Menu
 {
