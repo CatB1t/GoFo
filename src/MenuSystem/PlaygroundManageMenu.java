@@ -91,10 +91,10 @@ public class PlaygroundManageMenu implements Menu
 
         for(int i = 0; i < cachedSlots.size(); i++)
         {
-            toPrint += (i + 1) + cachedSlots.get(i).toString() + "\n";
+            toPrint += (i + 1) + ". " + cachedSlots.get(i).toString() + "\n";
         }
 
-        toPrint += cachedSlots.size() + ". Return.";
+        toPrint += (cachedSlots.size() + 1) + ". Return.";
 
         System.out.println(toPrint);
 
