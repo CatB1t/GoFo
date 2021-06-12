@@ -1,7 +1,7 @@
 package MenuSystem;
 
 import GoFo.Playground;
-import GoFo.Slot;
+import BookingProcess.Slot;
 
 import java.util.ArrayList;
 

@@ -3,7 +3,7 @@ package MenuSystem;
 import BookingProcess.BookingManager;
 import GoFo.Playground;
 import GoFo.PlaygroundsManager;
-import GoFo.Slot;
+import BookingProcess.Slot;
 import UserManager.Player;
 
 import java.util.ArrayList;

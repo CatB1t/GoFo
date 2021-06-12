@@ -1,5 +1,7 @@
 package GoFo;
 
+import BookingProcess.Slot;
+
 import java.util.ArrayList;
 
 public class Playground
