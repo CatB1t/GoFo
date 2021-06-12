@@ -72,7 +72,7 @@ public class PlayerMenu implements Menu
         for(int i = 0; i < myBookings.size(); ++i)
         {
             Book cached = myBookings.get(i);
-            toPrint += (i + 1) + ". Day: " + cached.bookedSlot.day + ", Playground: " + cached.playground.getName() + "\n";
+            toPrint += (i + 1) + ". " + cached.toString() + "\n";
         }
 
         System.out.println(toPrint);
