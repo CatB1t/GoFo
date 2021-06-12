@@ -1,8 +1,7 @@
 package UserManager;
 
-import GoFo.Playground;
-import GoFo.PlaygroundsManager;
-import MenuSystem.PlaygroundOwnerMenu;
+import PlaygroundSystem.Playground;
+import PlaygroundSystem.PlaygroundsManager;
 
 import java.util.ArrayList;
 

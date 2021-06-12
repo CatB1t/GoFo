@@ -1,6 +1,6 @@
 package BookingProcess;
 
-import GoFo.Playground;
+import PlaygroundSystem.Playground;
 import UserManager.Player;
 
 public class Book

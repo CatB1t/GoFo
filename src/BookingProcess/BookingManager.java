@@ -1,6 +1,6 @@
 package BookingProcess;
 
-import GoFo.*;
+import PlaygroundSystem.Playground;
 import UserManager.Player;
 import java.util.ArrayList;
 

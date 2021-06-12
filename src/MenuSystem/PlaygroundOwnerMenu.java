@@ -1,7 +1,7 @@
 package MenuSystem;
 
 import BookingProcess.Book;
-import GoFo.Playground;
+import PlaygroundSystem.Playground;
 import UserManager.PlaygroundOwner;
 import UserManager.UserManager;
 
