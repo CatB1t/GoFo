@@ -1,4 +1,4 @@
-package BookingProcess;
+package BookingSystem;
 
 public class Slot
 {

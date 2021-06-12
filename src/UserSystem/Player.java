@@ -1,6 +1,6 @@
 package UserSystem;
 
-import BookingProcess.Book;
+import BookingSystem.Book;
 
 import java.util.ArrayList;
 

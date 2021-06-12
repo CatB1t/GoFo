@@ -1,9 +1,9 @@
 package MenuSystem;
 
-import BookingProcess.BookingManager;
+import BookingSystem.BookingManager;
 import PlaygroundSystem.Playground;
 import PlaygroundSystem.PlaygroundsManager;
-import BookingProcess.Slot;
+import BookingSystem.Slot;
 import UserSystem.Player;
 
 import java.util.ArrayList;

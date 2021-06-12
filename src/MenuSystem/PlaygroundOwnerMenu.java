@@ -1,6 +1,6 @@
 package MenuSystem;
 
-import BookingProcess.Book;
+import BookingSystem.Book;
 import PlaygroundSystem.Playground;
 import UserSystem.PlaygroundOwner;
 import UserSystem.UserManager;

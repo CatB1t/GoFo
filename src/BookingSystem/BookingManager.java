@@ -1,4 +1,4 @@
-package BookingProcess;
+package BookingSystem;
 
 import PlaygroundSystem.Playground;
 import UserSystem.Player;

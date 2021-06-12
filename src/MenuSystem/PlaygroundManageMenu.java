@@ -1,7 +1,7 @@
 package MenuSystem;
 
 import PlaygroundSystem.Playground;
-import BookingProcess.Slot;
+import BookingSystem.Slot;
 
 import java.util.ArrayList;
 
