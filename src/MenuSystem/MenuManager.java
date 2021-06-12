@@ -28,7 +28,7 @@ public class MenuManager
     static public String getStringLineInput(String toPrint)
     {
         System.out.println(toPrint);
-        clearBuffer();
+        //clearBuffer();
         return keyboard.nextLine();
     }
 
