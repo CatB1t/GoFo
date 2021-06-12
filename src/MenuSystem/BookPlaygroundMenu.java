@@ -28,7 +28,7 @@ public class BookPlaygroundMenu implements Menu
     }
 
     /**
-     * make player choose a slot for the playground they want to book.
+     * Make player choose a slot for the playground they want to book.
      */
     public void Show()
     {

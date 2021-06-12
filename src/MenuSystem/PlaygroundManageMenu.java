@@ -35,7 +35,7 @@ public class PlaygroundManageMenu implements Menu
 
     /**
      * Handles playground owner's choice.
-     * @return false when owner choose to add , remove or enters invalid option,and return true if they decided to show avilable slots.
+     * @return false when owner choose to add , remove or enters invalid option, and return true if they decided to show available slots.
      */
     public boolean Handle()
     {

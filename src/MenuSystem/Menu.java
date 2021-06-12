@@ -3,13 +3,13 @@ package MenuSystem;
 public interface Menu
 {
     /**
-     * Responsible for displaying different menus.
+     * Responsible for displaying the menu to the user
      */
     void Show();
 
     /**
-     * Handles users' choices from menus.
-     * @return boolean differs according to user's choice.
+     * Handles user's input
+     * @return Should return true to exit the menu, otherwise returns false
      */
     boolean Handle();
 }

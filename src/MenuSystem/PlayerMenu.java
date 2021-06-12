@@ -13,7 +13,7 @@ public class PlayerMenu implements Menu
     private Player currentUser;
 
     /**
-     * sets the current user to the player using menu.
+     * Sets the current user to the player using menu.
      * @param playerIndex index of the player who will use the menu
      */
     public PlayerMenu(int playerIndex)
@@ -22,7 +22,7 @@ public class PlayerMenu implements Menu
     }
 
     /**
-     *shows the player menu that contains: show playgrounds,show player's bookings and exit the app.
+     * Shows the player menu that contains: show playgrounds,show player's bookings and exit the app.
      */
     public void Show ()
     {
@@ -35,8 +35,8 @@ public class PlayerMenu implements Menu
     }
 
     /**
-     *Handles player's choice whether they chose to show playground,show bookings, or to exit the app.
-     * @return false when player chooses to show playgrounds or bookings,and return true when he exits.
+     * Handles player's choice whether they chose to show playground,show bookings, or to exit the app.
+     * @return false when player chooses to show playgrounds or bookings, and return true when they logouts.
      */
 
     public boolean Handle ()
@@ -49,7 +49,7 @@ public class PlayerMenu implements Menu
             case 2: // Show bookings
                 showMyBookings();
                 return false;
-            case 3: // Exit
+            case 3: // Logout
                 return true;
         }
         return true;

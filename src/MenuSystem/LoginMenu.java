@@ -13,8 +13,8 @@ public class LoginMenu implements Menu
     }
 
     /**
-     *Handles the process of logging in by asking the user for name and password then it checking their validity.
-     * @return boolean that equals true when user's login info are not valid, and false when they are valid.
+     * Handles the process of logging in by asking the user for name and password then it checking their validity.
+     * @return false if valid login, otherwise returns true.
      */
     public boolean Handle ()
     {

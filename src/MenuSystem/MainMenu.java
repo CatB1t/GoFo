@@ -4,7 +4,7 @@ package MenuSystem;
 public class MainMenu implements Menu
 {
     /**
-     * shows main menu for clients to choose what they want whether to register,log in or exit the whole app.
+     * Shows main menu for clients to choose what they want whether to register,log in or exit the whole app.
      */
     public void Show ()
     {
@@ -16,8 +16,8 @@ public class MainMenu implements Menu
     }
 
     /**
-     *Handles the user's choice whether they chose to log in, register or exit.
-     * @return false when user chooses register or log in ,true when they decide to exit the app.
+     * Handles the user's choice whether they chose to log in, register or exit.
+     * @return false when user chooses register or log in , true when they decide to exit the app.
      */
     public boolean Handle ()
     {

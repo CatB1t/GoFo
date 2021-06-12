@@ -47,7 +47,7 @@ public class PlaygroundOwnerMenu implements Menu
             case 2: // Show Playgrounds
                 showPlaygrounds();
                 return false;
-            case 3: // Exit
+            case 3: // Logout
                 return true;
             default:
                 System.out.println("Invalid input");
