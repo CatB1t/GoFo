@@ -101,14 +101,7 @@ public class PlayerMenu implements Menu
         toPrint += (playgrounds.size() + 1) + ". Return";
         System.out.println(toPrint);
 
-        int choice = MenuManager.getIntInput();
-
-        // TODO Loop for valid input
-        if(choice < 1 || choice > (playgrounds.size() + 1))
-        {
-            System.out.println("Invalid input");
-            return;
-        }
+        int choice = MenuManager.getInputChoice(1, playgrounds.size() + 1);
 
         if(choice == (playgrounds.size() + 1)) {
             return;

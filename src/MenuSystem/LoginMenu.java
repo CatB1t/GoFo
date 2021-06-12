@@ -18,13 +18,8 @@ public class LoginMenu implements Menu
      */
     public boolean Handle ()
     {
-        String name,password;
-
-        // TODO refactor
-        System.out.print("Enter username: ");
-        name = MenuManager.keyboard.next();
-        System.out.print("Enter password (case sensitive): ");
-        password = MenuManager.keyboard.next();
+        String name = MenuManager.getStringWordInput("Enter username: ");
+        String password = MenuManager.getStringWordInput("Enter password (case sensitive): ");
 
         LoginStatus loginStatus = UserManager.login(name, password);
 

@@ -63,18 +63,20 @@ public class BookPlaygroundMenu implements Menu
         if(shouldSkipInput)
             return true;
 
-        int choice = MenuManager.getInputChoice(1, endIndex);
-
-        if(choice < 0 || choice > endIndex + 1) // TODO loop for valid input
-        {
-            System.out.println("Invalid input");
-            return true;
-        }
+        int choice = MenuManager.getInputChoice(1, endIndex + 1);
 
         if(choice == endIndex + 1)
             return true;
 
-        // TODO show confirmation to book
+        while(true)
+        {
+            String stringInput = MenuManager.getStringWordInput("Are you sure you want to book this slot? (y/n): ");
+            if(stringInput.equalsIgnoreCase("y") || stringInput.equalsIgnoreCase("yes"))
+                break;
+            if (stringInput.equalsIgnoreCase("n") || stringInput.equalsIgnoreCase("no"))
+                return true;
+        }
+
         System.out.println("Booked slot successfully");
         BookingManager.bookSlot(playerToBook, playgroundToBook , playgroundToBook.getAvailableSchedule().get(choice - 1));
         return true;

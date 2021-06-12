@@ -20,27 +20,38 @@ public class MenuManager
         return keyboard.next();
     }
 
-    static public String getStringLineInput(String toPrint)
-    {
-        System.out.println();
-        return keyboard.nextLine();
-    }
-
     static public String getStringWordInput()
     {
         return keyboard.next();
     }
 
+    static public String getStringLineInput(String toPrint)
+    {
+        System.out.println(toPrint);
+        return keyboard.nextLine();
+    }
+
     static public String getStringLineInput()
     {
+        clearBuffer();
         return keyboard.nextLine();
     }
 
     static public int getIntInput(String toPrint)
     {
-        // TODO input validation
-        System.out.print(toPrint);
-        return keyboard.nextInt();
+        int toReturn = 0;
+        while(true)
+        {
+            System.out.print(toPrint);
+            if(keyboard.hasNextInt()) {
+                toReturn = keyboard.nextInt();
+                clearBuffer();
+                break;
+            }
+            clearBuffer();
+            System.out.print("Not a valid choice. Try again: ");
+        }
+        return toReturn;
     }
 
     static public int getInputChoice(int min, int max)
@@ -53,6 +64,7 @@ public class MenuManager
                 toReturn = keyboard.nextInt();
                 if(toReturn <= max && toReturn >= min)
                 {
+                    clearBuffer();
                     break;
                 }
             }
@@ -64,12 +76,39 @@ public class MenuManager
 
     static public int getIntInput()
     {
-        // TODO input validation
-        System.out.print("Enter your choice: ");
-        return keyboard.nextInt();
+        int toReturn = 0;
+        while(true)
+        {
+            System.out.print("Enter your choice: ");
+            if(keyboard.hasNextInt()) {
+                toReturn = keyboard.nextInt();
+                clearBuffer();
+                break;
+                }
+            clearBuffer();
+            System.out.print("Not a valid choice. Try again: ");
+        }
+        return toReturn;
     }
 
-    static public void clearBuffer ()
+    static public Double getDoubleInput(String toPrint)
+    {
+        Double toReturn = 0d;
+        while(true)
+        {
+            System.out.print(toPrint);
+            if(keyboard.hasNextDouble()) {
+                toReturn = keyboard.nextDouble();
+                clearBuffer();
+                break;
+            }
+            clearBuffer();
+            System.out.print("Not a valid choice. Try again: ");
+        }
+        return toReturn;
+    }
+
+    static private void clearBuffer ()
     {
         keyboard.nextLine(); // Clear the buffer.
     }

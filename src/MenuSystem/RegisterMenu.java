@@ -52,21 +52,11 @@ public class RegisterMenu implements Menu
 
         String name, password, email, location, phone;
 
-        System.out.print("Enter your username: ");
-        name = MenuManager.keyboard.next();
-
-        System.out.print("Enter your password: ");
-        password = MenuManager.keyboard.next();
-
-        System.out.print("Enter your email: ");
-        email = MenuManager.keyboard.next();
-
-        System.out.print("Enter your phone: ");
-        phone = MenuManager.keyboard.next();
-
-        System.out.print("Enter your location: ");
-        MenuManager.clearBuffer();
-        location = MenuManager.keyboard.nextLine();
+        name = MenuManager.getStringWordInput("Enter your username: ");
+        password = MenuManager.getStringWordInput("Enter your password: ");
+        email = MenuManager.getStringWordInput("Enter your email: ");
+        phone = MenuManager.getStringWordInput("Enter your phone: ");
+        location = MenuManager.getStringLineInput("Enter your location: ");
 
         if(UserManager.createUser(name, password, email, phone, location, type))
         {

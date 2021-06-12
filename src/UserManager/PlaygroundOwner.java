@@ -41,9 +41,8 @@ public class PlaygroundOwner extends User
      * @param perPriceHour playground's price per hour
      * @return true after creating the new playground.
      */
-    public boolean createPlayground(String name, String location, int size, long perPriceHour)
+    public boolean createPlayground(String name, String location, int size, Double perPriceHour)
     {
-        // TODO pass owner as a reference
         Playground playground = new Playground(name, location, size, perPriceHour);
         ownedPlaygrounds.add(playground);
         PlaygroundsManager.addPlayground(playground);

@@ -64,19 +64,10 @@ public class PlaygroundOwnerMenu implements Menu
      */
     private boolean createPlayground()
     {
-
-        MenuManager.clearBuffer();
-
-        System.out.print("Enter playground name: ");
-        String name = MenuManager.getStringLineInput();
-
-        System.out.print("Enter location name: ");
-        String location = MenuManager.getStringLineInput();
-
+        String name = MenuManager.getStringLineInput("Enter playground name: ");
+        String location = MenuManager.getStringLineInput("Enter location name: ");
         int size = MenuManager.getIntInput("Enter playground size: ");
-
-        System.out.print("Enter price per hour: ");
-        long price = MenuManager.getIntInput(); // TODO use double price
+        Double price = MenuManager.getDoubleInput("Enter price per hour: ");
 
         currentUser.createPlayground(name, location, size, price);
         return true;

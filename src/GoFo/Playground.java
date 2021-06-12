@@ -7,7 +7,7 @@ public class Playground
     private String name;
     private int size;
     private String location;
-    private long pricePerHour;
+    private Double pricePerHour;
     private ArrayList<Slot> availableSchedule = new ArrayList<Slot>();
     private ArrayList<Slot> bookedSchedule = new ArrayList<Slot>();
 
@@ -25,7 +25,7 @@ public class Playground
         this.name = "";
         this.size = 0;
         this.location = "";
-        this.pricePerHour = 0;
+        this.pricePerHour = 0d;
     }
 
     /**
@@ -35,7 +35,7 @@ public class Playground
      * @param size size of the playground.
      * @param pricePerHour playground's price per hour.
      */
-    public Playground(String name, String location, int size, long pricePerHour)
+    public Playground(String name, String location, int size, Double pricePerHour)
     {
         this.name = name;
         this.location = location;
@@ -75,7 +75,7 @@ public class Playground
         availableSchedule.remove(slot);
     }
 
-    public long getPricePerHour () {
+    public Double getPricePerHour () {
         return pricePerHour;
     }
 
