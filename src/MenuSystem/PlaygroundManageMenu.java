@@ -11,7 +11,7 @@ public class PlaygroundManageMenu implements Menu
 
     /**
      * Parametrized constructor sets playground.
-     * @param playground.
+     * @param playground that will be set.
      */
     public PlaygroundManageMenu(Playground playground)
     {
